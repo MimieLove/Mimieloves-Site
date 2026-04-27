@@ -1,39 +1,14 @@
-import React, { useMemo, useState } from "react";
-
-const inventory = [
-  { id: 1, name: "Floral Dress", section: "Women", price: 45 },
-  { id: 2, name: "Denim Jacket", section: "Men", price: 60 },
-  { id: 3, name: "Girls Dress", section: "Girls", price: 32 },
-  { id: 4, name: "Boys Shirt", section: "Boys", price: 18 },
-  { id: 5, name: "Infant Set", section: "Infant", price: 22 }
-];
+import React from "react";
 
 export default function App() {
-  const [search, setSearch] = useState("");
-
-  const filtered = useMemo(() => {
-    return inventory.filter(item =>
-      item.name.toLowerCase().includes(search.toLowerCase())
-    );
-  }, [search]);
-
   return (
-    <div style={{ padding: 20, fontFamily: "Arial" }}>
-      <h1 style={{ color: "purple" }}>MimiE Loves 💜</h1>
+    <div style={{ padding: 40, fontFamily: "Arial", color: "purple" }}>
+      <h1>MimiE Loves 💜</h1>
+      <h2>New & Pre-Loved Fashion</h2>
+      <p>Clothing for women, men, kids, girls, boys, and infants.</p>
 
-      <input
-        placeholder="Search items"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        style={{ padding: 10, marginBottom: 20 }}
-      />
-
-      <div>
-        {filtered.map(item => (
-          <div key={item.id} style={{ marginBottom: 10 }}>
-            {item.name} - ${item.price}
-          </div>
-        ))}
+      <div style={{ marginTop: 20 }}>
+        <p>Women • Men • Kids • Girls • Boys • Infant</p>
       </div>
     </div>
   );
